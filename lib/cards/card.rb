@@ -1,5 +1,6 @@
-class Card
+# frozen_string_literal: true
 
+class Card
   def initialize(title, type, cost, text)
     @title = title
     @type = type
@@ -22,5 +23,4 @@ class Card
   def return_text
     @text
   end
-  
 end

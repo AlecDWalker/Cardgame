@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'player'
 
 describe Player do
-  let(:player) {Player.new('Alec')}
+  let(:player) { Player.new('Alec') }
 
   it 'initializes as a blank slate' do
     expect(player.return_name).to eq 'Alec'

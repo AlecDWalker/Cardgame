@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'deck'
 
 class Player
-
   def initialize(name)
     @name = name
     @voters = 0
@@ -25,22 +26,21 @@ class Player
     @deck.return_cards
   end
 
-  def add_voters(n)
-    @voters+=n
+  def add_voters(num)
+    @voters += num
   end
 
-  def lose_voters(n)
-    @voters-=n
+  def lose_voters(num)
+    @voters -= num
     @voters = 0 if @voters.negative?
   end
 
-  def add_influence(n)
-    @influence+=n
+  def add_influence(num)
+    @influence += num
   end
 
-  def lose_influence(n)
-    @influence-=n
+  def lose_influence(num)
+    @influence -= num
     @influence = 0 if @influence.negative?
   end
-
 end

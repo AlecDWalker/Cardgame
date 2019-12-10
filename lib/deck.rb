@@ -1,6 +1,7 @@
-class Deck
+# frozen_string_literal: true
 
-attr_accessor :cards
+class Deck
+  attr_accessor :cards
 
   def initialize
     @cards = []
@@ -10,12 +11,11 @@ attr_accessor :cards
     @cards << card
   end
 
-  def draw_card(n)
-    n.times {@cards.shift}
+  def draw_card(num)
+    num.times { @cards.shift }
   end
 
   def return_cards
     @cards
   end
-
 end
