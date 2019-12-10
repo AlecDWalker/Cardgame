@@ -15,6 +15,10 @@ class Deck
     num.times { @cards.shift }
   end
 
+  def shuffle
+    @cards = @cards.shuffle
+  end
+
   def return_cards
     @cards
   end
