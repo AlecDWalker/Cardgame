@@ -17,7 +17,7 @@ describe Deck do
   it 'lets the player remove cards from the top of the deck' do
     deck.add_card(c1)
     deck.add_card(c2)
-    deck.draw_card(1)
+    deck.draw_card
     expect(deck.return_cards).to eq [c2]
   end
 end

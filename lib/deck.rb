@@ -11,8 +11,8 @@ class Deck
     @cards << card
   end
 
-  def draw_card(num)
-    num.times { @cards.shift }
+  def draw_card
+    @cards.shift
   end
 
   def shuffle

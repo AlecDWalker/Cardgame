@@ -3,7 +3,7 @@
 class Rumour < Card
 
   def play
-    
+    self.delete
   end
 
 end

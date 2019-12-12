@@ -2,12 +2,16 @@
 
 require 'deck'
 
+
+
 class Player
+  attr_accessor :deck , :hand
   def initialize(name)
     @name = name
     @voters = 0
     @influence = 0
     @deck = Deck.new
+    @hand = []
   end
 
   def return_name
@@ -24,6 +28,14 @@ class Player
 
   def deck_count
     @deck.return_cards
+  end
+
+  def return_hand
+    @hand
+  end
+
+  def draw_card(n)
+    n.times {@hand << @deck.draw_card}
   end
 
   def add_voters(num)

@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 require 'player'
+require 'cards/card'
+require 'deck'
 
 describe Player do
   let(:player) { Player.new('Alec') }
+  let(:card) {Card.new('Testname', 'Pledge', 1, 'This is where the card text goes')}
 
   it 'initializes as a blank slate' do
     expect(player.return_name).to eq 'Alec'
@@ -46,5 +49,15 @@ describe Player do
       player.lose_influence(6)
       expect(player.influence_count).to eq 0
     end
+  end
+
+  describe 'deck interaction' do
+    it 'can add a card from their deck to their hand' do
+    player.deck.add_card(card)
+    player.draw_card(1)
+    expect(player.return_hand).to eq [card]
+    expect(player.deck_count).to be_empty
+    end
+
   end
 end
