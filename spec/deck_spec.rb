@@ -20,5 +20,4 @@ describe Deck do
     deck.draw_card
     expect(deck.return_cards).to eq [c2]
   end
-  
 end

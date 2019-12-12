@@ -24,8 +24,5 @@ class Card
     @text
   end
 
-  def effect
-
-  end
-  
+  def effect; end
 end

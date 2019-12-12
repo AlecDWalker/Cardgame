@@ -6,7 +6,7 @@ require 'cards/advisors/advisor'
 require 'cards/rumour'
 
 class Player
-  attr_accessor :deck , :hand, :advisors
+  attr_accessor :deck, :hand, :advisors
   def initialize(name)
     @name = name
     @voters = 0
@@ -41,7 +41,7 @@ class Player
   end
 
   def draw_card(n)
-    n.times {@hand << @deck.draw_card}
+    n.times { @hand << @deck.draw_card }
   end
 
   def play(card)
@@ -57,7 +57,7 @@ class Player
   end
 
   def trigger_advisors
-    @advisors.each { |card| card.effect}
+    @advisors.each(&:effect)
   end
 
   def add_voters(num)

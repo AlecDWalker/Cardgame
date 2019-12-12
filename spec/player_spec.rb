@@ -8,9 +8,9 @@ require 'deck'
 
 describe Player do
   let(:player) { Player.new('Alec') }
-  let(:card) {Card.new('Testname', 'Pledge', 1, 'This is where the card text goes')}
-  let(:rumour) {Rumour.new('Rumour', 'Rumour', 0, 'This is a rumour card')}
-  let(:advisor) {Advisor.new('A very cute dog', 'Advisor', 0, 'Awww, look at his little face')}
+  let(:card) { Card.new('Testname', 'Pledge', 1, 'This is where the card text goes') }
+  let(:rumour) { Rumour.new('Rumour', 'Rumour', 0, 'This is a rumour card') }
+  let(:advisor) { Advisor.new('A very cute dog', 'Advisor', 0, 'Awww, look at his little face') }
 
   it 'initializes as a blank slate' do
     expect(player.return_name).to eq 'Alec'
@@ -82,5 +82,4 @@ describe Player do
     player.play(advisor)
     expect(player.return_advisors).to eq [advisor]
   end
-
 end

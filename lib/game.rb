@@ -1,11 +1,12 @@
-class Game
+# frozen_string_literal: true
 
+class Game
   def initialize(player_array)
     @players = []
-    player_array.each { |n|
+    player_array.each do |n|
       @players << n
-    }
-    @voter_pool = 15*(player_array.count)
+    end
+    @voter_pool = 15 * player_array.count
     @game_over = false
     @current_turn = @players.first
   end
@@ -19,20 +20,16 @@ class Game
   end
 
   def sort_order
-    @players.sort_by!{ |player| -player.voter_count}
+    @players.sort_by! { |player| -player.voter_count }
   end
 
-  def current_turn
-    @current_turn
-  end
+  attr_reader :current_turn
 
   def switch_turns
     @current_turn = opponent_of(@current_turn)
   end
 
   def opponent_of(the_player)
-    @players.select {|player| player != the_player}.first
+    @players.reject { |player| player == the_player }.first
   end
-
-
 end
