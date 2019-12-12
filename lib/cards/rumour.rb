@@ -2,8 +2,4 @@
 
 class Rumour < Card
 
-  def effect
-    print 'Rumour removed'
-  end
-
 end

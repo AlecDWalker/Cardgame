@@ -3,12 +3,14 @@
 require 'player'
 require 'cards/card'
 require 'cards/rumour'
+require 'cards/advisors/advisor'
 require 'deck'
 
 describe Player do
   let(:player) { Player.new('Alec') }
   let(:card) {Card.new('Testname', 'Pledge', 1, 'This is where the card text goes')}
-  let(:rumour) {Rumour.new('Rumour', 'rumour', 0, 'This is a rumour card')}
+  let(:rumour) {Rumour.new('Rumour', 'Rumour', 0, 'This is a rumour card')}
+  let(:advisor) {Advisor.new('A very cute dog', 'Advisor', 0, 'Awww, look at his little face')}
 
   it 'initializes as a blank slate' do
     expect(player.return_name).to eq 'Alec'
@@ -70,16 +72,15 @@ describe Player do
       expect(player.return_hand).to be_empty
       expect(player.deck_count).to eq [rumour, card]
     end
-
-    describe 'Rumours' do
-      it 'can play a rumour from their hand and delete it' do
-        player.deck.add_card(rumour)
-        player.deck.add_card(card)
-        player.draw_card(1)
-        player.play(rumour)
-        expect(player.return_hand).to be_empty
-        expect(player.deck_count).to eq [card]
-      end
-    end
   end
+
+  it 'can trigger advisor effects when played' do
+    expect(advisor.effect).to eq 'advisor triggers'
+  end
+
+  it 'can add advisor cards to the advisors array' do
+    player.play(advisor)
+    expect(player.return_advisors).to eq [advisor]
+  end
+
 end

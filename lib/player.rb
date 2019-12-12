@@ -1,17 +1,19 @@
 # frozen_string_literal: true
 
 require 'deck'
-
-
+require 'cards/card'
+require 'cards/advisors/advisor'
+require 'cards/rumour'
 
 class Player
-  attr_accessor :deck , :hand
+  attr_accessor :deck , :hand, :advisors
   def initialize(name)
     @name = name
     @voters = 0
     @influence = 0
     @deck = Deck.new
     @hand = []
+    @advisors = []
   end
 
   def return_name
@@ -34,14 +36,28 @@ class Player
     @hand
   end
 
+  def return_advisors
+    @advisors
+  end
+
   def draw_card(n)
     n.times {@hand << @deck.draw_card}
   end
 
   def play(card)
     card.effect
-    @deck.cards << card unless card.is_a? Rumour
+    if card.is_a? Advisor
+      @advisors << card
+    elsif card.is_a? Rumour
+      print 'Rumour quashed'
+    else
+      @deck.cards << card
+    end
     @hand.delete(card)
+  end
+
+  def trigger_advisors
+    @advisors.each { |card| card.effect}
   end
 
   def add_voters(num)
