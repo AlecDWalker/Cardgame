@@ -2,8 +2,8 @@
 
 class Rumour < Card
 
-  def play
-    self.delete
+  def effect
+    print 'Rumour removed'
   end
 
 end

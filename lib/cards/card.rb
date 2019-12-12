@@ -23,4 +23,9 @@ class Card
   def return_text
     @text
   end
+
+  def effect
+
+  end
+  
 end

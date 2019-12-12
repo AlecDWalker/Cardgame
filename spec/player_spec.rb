@@ -2,11 +2,13 @@
 
 require 'player'
 require 'cards/card'
+require 'cards/rumour'
 require 'deck'
 
 describe Player do
   let(:player) { Player.new('Alec') }
   let(:card) {Card.new('Testname', 'Pledge', 1, 'This is where the card text goes')}
+  let(:rumour) {Rumour.new('Rumour', 'rumour', 0, 'This is a rumour card')}
 
   it 'initializes as a blank slate' do
     expect(player.return_name).to eq 'Alec'
@@ -52,12 +54,32 @@ describe Player do
   end
 
   describe 'deck interaction' do
-    it 'can add a card from their deck to their hand' do
-    player.deck.add_card(card)
-    player.draw_card(1)
-    expect(player.return_hand).to eq [card]
-    expect(player.deck_count).to be_empty
+    it 'can add a card from the top of their deck to their hand' do
+      player.deck.add_card(card)
+      player.deck.add_card(rumour)
+      player.draw_card(1)
+      expect(player.return_hand).to eq [card]
+      expect(player.deck_count).to eq [rumour]
     end
 
+    it 'can put a card from their hand to the bottom of the deck' do
+      player.deck.add_card(card)
+      player.deck.add_card(rumour)
+      player.draw_card(1)
+      player.play(card)
+      expect(player.return_hand).to be_empty
+      expect(player.deck_count).to eq [rumour, card]
+    end
+
+    describe 'Rumours' do
+      it 'can play a rumour from their hand and delete it' do
+        player.deck.add_card(rumour)
+        player.deck.add_card(card)
+        player.draw_card(1)
+        player.play(rumour)
+        expect(player.return_hand).to be_empty
+        expect(player.deck_count).to eq [card]
+      end
+    end
   end
 end

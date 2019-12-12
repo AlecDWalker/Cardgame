@@ -38,6 +38,12 @@ class Player
     n.times {@hand << @deck.draw_card}
   end
 
+  def play(card)
+    card.effect
+    @deck.cards << card unless card.is_a? Rumour
+    @hand.delete(card)
+  end
+
   def add_voters(num)
     @voters += num
   end
