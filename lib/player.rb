@@ -44,7 +44,7 @@ class Player
 
   def play(card)
     card.effect
-    card.resolve(@deck, @advisors)
+    card.resolve(self)
     @hand.delete(card)
   end
 

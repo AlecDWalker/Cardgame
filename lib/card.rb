@@ -26,15 +26,15 @@ class Card
     @text
   end
 
-  def resolve(deck, hand)
-    deck.cards << self
+  def resolve(player)
+    player.deck.cards << self
   end
 
   def effect; end
 end
 
 class Rumour < Card
-  def resolve(deck, advisors)
+  def resolve(player)
     'Rumour quashed'
   end
 end
@@ -44,7 +44,7 @@ class Advisor < Card
     'Advisor triggers'
   end
 
-  def resolve(deck, advisors)
-    advisors << self
+  def resolve(player)
+    player.advisors << self
   end
 end
