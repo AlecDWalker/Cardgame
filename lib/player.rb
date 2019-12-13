@@ -2,8 +2,6 @@
 
 require_relative 'deck'
 require_relative 'card'
-require_relative 'advisor'
-require_relative 'rumour'
 
 class Player
   attr_accessor :deck, :hand, :advisors
