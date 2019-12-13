@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'cards/card'
+require 'card'
 
 describe Card do
   it 'can return its key details' do

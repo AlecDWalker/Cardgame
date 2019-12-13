@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'deck'
-require 'cards/card'
-require 'cards/advisors/advisor'
-require 'cards/rumour'
+require_relative 'deck'
+require_relative 'card'
+require_relative 'advisor'
+require_relative 'rumour'
 
 class Player
   attr_accessor :deck, :hand, :advisors
@@ -46,18 +46,12 @@ class Player
 
   def play(card)
     card.effect
-    if card.is_a? Advisor
-      @advisors << card
-    elsif card.is_a? Rumour
-      print 'Rumour quashed'
-    else
-      @deck.cards << card
-    end
+    card.resolve(@deck, @advisors)
     @hand.delete(card)
   end
 
   def trigger_advisors
-    @advisors.each(&:effect)
+    @advisors.each{|advisor| return advisor.effect}
   end
 
   def add_voters(num)

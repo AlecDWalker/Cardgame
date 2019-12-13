@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 require 'player'
-require 'cards/card'
-require 'cards/rumour'
+require 'card'
 require 'deck'
 
 describe Rumour do
