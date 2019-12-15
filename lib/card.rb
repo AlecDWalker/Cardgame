@@ -48,3 +48,9 @@ class Advisor < Card
     player.advisors << self
   end
 end
+
+class Pledge < Card
+end
+
+class Smear < Card
+end
