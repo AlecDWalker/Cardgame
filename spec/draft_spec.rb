@@ -9,10 +9,15 @@ describe Draft do
   let(:p3) { Player.new('Holly') }
   let(:cardpool) {[c1, c1, c1, c2]}
   let(:player_array) {[p1, p2, p3]}
+  let(:draft) {Draft.new(cardpool, player_array)}
 
   it 'can initialize with a selection array of 3 cards' do
-    draft = Draft.new(cardpool, player_array)
     expect(draft.return_selection).to eq [c1, c1, c1]
+  end
+
+  it 'can have a player choose one of the cards' do
+    draft.choose(1)
+    expect(draft.return_selection).to eq [c2, c1, c1]
   end
 
 end
