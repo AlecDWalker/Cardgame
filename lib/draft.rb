@@ -10,19 +10,20 @@ class Draft
   end
 
   def deal(n)
-    if @cardpool.empty?
-      'Last card has been picked'
-    else
-      @selection.insert(n, @cardpool.shift)
-    end
+    @selection.insert(n, @cardpool.shift) if @cardpool.any?
   end
 
   def return_selection
-    @selection
+    if @selection.any?
+      @selection
+    else
+      "All cards drafted, let the game begin!"
+    end
   end
 
   def choose(n)
     deal(n)
     @selection.slice!(n - 1)
   end
+
 end
