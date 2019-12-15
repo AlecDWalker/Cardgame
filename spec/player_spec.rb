@@ -70,5 +70,4 @@ describe Player do
       expect(player.deck_count).to eq [rumour, card]
     end
   end
-
 end

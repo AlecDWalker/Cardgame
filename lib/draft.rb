@@ -1,16 +1,17 @@
-class Draft
+# frozen_string_literal: true
 
+class Draft
   def initialize(cardpool, player_array)
     @cardpool = cardpool
     @player_array = player_array
     @selection = []
     @chooser = 0
-    3.times{self.deal(0)}
+    3.times { deal(0) }
   end
 
   def deal(n)
     if @cardpool.empty?
-      "Last card has been picked"
+      'Last card has been picked'
     else
       @selection.insert(n, @cardpool.shift)
     end
@@ -21,8 +22,7 @@ class Draft
   end
 
   def choose(n)
-    @selection.slice!(n-1)
-    self.deal(n-1)
+    deal(n)
+    @selection.slice!(n - 1)
   end
-
 end

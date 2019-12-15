@@ -49,7 +49,7 @@ class Player
   end
 
   def trigger_advisors
-    @advisors.each{|advisor| return advisor.effect}
+    @advisors.each { |advisor| return advisor.effect }
   end
 
   def add_voters(num)

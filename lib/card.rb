@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'deck'
 require_relative 'player'
 class Card
@@ -34,7 +35,7 @@ class Card
 end
 
 class Rumour < Card
-  def resolve(player)
+  def resolve(_player)
     'Rumour quashed'
   end
 end
