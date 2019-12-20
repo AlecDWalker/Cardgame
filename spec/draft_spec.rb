@@ -37,12 +37,12 @@ describe Draft do
   end
 
   it 'returns to the start of the player array once all have chosen' do
-    3.times{draft.rotate}
+    3.times { draft.rotate }
     expect(draft.current_player).to eq p1
   end
 
   it 'returns a message once the last card has been picked' do
-    4.times {draft.choose(1)}
-    expect(draft.return_selection).to eq "All cards drafted, let the game begin!"
+    4.times { draft.choose(1) }
+    expect(draft.return_selection).to eq 'All cards drafted, let the game begin!'
   end
 end

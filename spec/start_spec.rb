@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'start'
 
 describe Start do
-  let(:start) {Start.new}
+  let(:start) { Start.new }
   before do
-  start.add_player('Alec')
-  start.add_player('Dave')
+    start.add_player('Alec')
+    start.add_player('Dave')
   end
 
   it 'can add players to the player array' do

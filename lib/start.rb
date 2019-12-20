@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'player'
 require_relative 'draft'
 
@@ -18,5 +20,4 @@ class Start
   def create_draft
     Draft.new(@cardpool, @player_array)
   end
-
 end

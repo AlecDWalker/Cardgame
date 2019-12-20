@@ -16,9 +16,7 @@ class Game
     @players
   end
 
-  def current_turn
-    @current_turn
-  end
+  attr_reader :current_turn
 
   def sort_order
     @players.sort_by! { |player| -player.voter_count }
@@ -35,5 +33,4 @@ class Game
   def current_player
     @players[@current_turn]
   end
-
 end

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'player'
 
 class Draft
@@ -23,7 +24,7 @@ class Draft
       @selection
     else
       Game.new(@player_array)
-      "All cards drafted, let the game begin!"
+      'All cards drafted, let the game begin!'
     end
   end
 
@@ -43,5 +44,4 @@ class Draft
       @chooser = 0
     end
   end
-
 end
