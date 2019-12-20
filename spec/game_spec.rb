@@ -13,11 +13,19 @@ describe Game do
     expect(game.return_voter_pool).to eq 45
   end
 
-  it 'can reorder player turns based on voter count' do
+  it 'can reorder the player array based on voter count' do
     p1.add_voters(5)
     p2.add_voters(10)
     p3.add_voters(2)
     game.sort_order
     expect(game.return_players.first).to eq p2
+  end
+
+  it 'can cycle through player turns' do
+    expect(game.current_player).to eq p1
+    game.switch_turns
+    expect(game.current_player).to eq p2
+    game.switch_turns
+    expect(game.current_player).to eq p3
   end
 end

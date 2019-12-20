@@ -5,7 +5,7 @@ class Game
     @players = player_array
     @voter_pool = 15 * player_array.count
     @game_over = false
-    @current_turn = @players.first
+    @current_turn = 0
   end
 
   def return_voter_pool
@@ -16,17 +16,24 @@ class Game
     @players
   end
 
+  def current_turn
+    @current_turn
+  end
+
   def sort_order
     @players.sort_by! { |player| -player.voter_count }
   end
 
-  attr_reader :current_turn
-
   def switch_turns
-    @current_turn = opponent_of(@current_turn)
+    if @current_turn < @players.count - 1
+      @current_turn += 1
+    else
+      @current_turn = 0
+    end
   end
 
-  def opponent_of(the_player)
-    @players.reject { |player| player == the_player }.first
+  def current_player
+    @players[@current_turn]
   end
+
 end
