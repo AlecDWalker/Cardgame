@@ -17,7 +17,7 @@ describe Start do
   it 'can create a new draft with the player array' do
     draft = start.create_draft
     expect(draft).instance_of? Draft
-    expect(start.return_players[0].return_name).to eq 'Alec'
-    expect(start.return_players[1].return_name).to eq 'Dave'
+    expect(draft.return_players[0].return_name).to eq 'Alec'
+    expect(draft.return_players[1].return_name).to eq 'Dave'
   end
 end
