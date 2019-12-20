@@ -9,6 +9,10 @@ class Draft
     3.times { deal(0) }
   end
 
+  def return_players
+    @player_array
+  end
+
   def deal(n)
     @selection.insert(n, @cardpool.shift) if @cardpool.any?
   end
