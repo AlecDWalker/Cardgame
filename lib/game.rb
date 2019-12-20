@@ -2,10 +2,7 @@
 
 class Game
   def initialize(player_array)
-    @players = []
-    player_array.each do |n|
-      @players << n
-    end
+    @players = player_array
     @voter_pool = 15 * player_array.count
     @game_over = false
     @current_turn = @players.first

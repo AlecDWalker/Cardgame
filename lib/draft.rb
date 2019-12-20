@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require_relative 'player'
 
 class Draft
   def initialize(cardpool, player_array)
@@ -21,13 +22,26 @@ class Draft
     if @selection.any?
       @selection
     else
+      Game.new(@player_array)
       "All cards drafted, let the game begin!"
     end
   end
 
   def choose(n)
     deal(n)
-    @selection.slice!(n - 1)
+    current_player.deck.add_card(@selection.slice!(n - 1))
+  end
+
+  def current_player
+    @player_array[@chooser]
+  end
+
+  def rotate
+    if @chooser < @player_array.count - 1
+      @chooser += 1
+    else
+      @chooser = 0
+    end
   end
 
 end
