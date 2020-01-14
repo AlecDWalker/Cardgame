@@ -9,6 +9,7 @@ class Card
     @type = type
     @cost = cost
     @text = text
+    @targets = []
   end
 
   def return_title
@@ -27,7 +28,16 @@ class Card
     @text
   end
 
+  def target(player)
+    @targets << player
+  end
+
+  def return_target
+    @targets.first
+  end
+
   def resolve(player)
+    @targets.clear
     player.deck.cards << self
   end
 
@@ -35,7 +45,7 @@ class Card
 end
 
 class Rumour < Card
-  def resolve(_player)
+  def resolve(player)
     'Rumour quashed'
   end
 end
