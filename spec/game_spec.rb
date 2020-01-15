@@ -13,10 +13,20 @@ describe Game do
     expect(game.return_voter_pool).to eq 45
   end
 
+  it 'can reduce the number of voters in the pool' do
+    game.reduce_voter_pool(5)
+    expect(game.return_voter_pool).to eq 40
+  end
+
+  it 'cannot reduce the number of voters below zero' do
+    game.reduce_voter_pool(100)
+    expect(game.return_voter_pool).to eq 0
+  end
+
   it 'can reorder the player array based on voter count' do
-    p1.add_voters(5)
-    p2.add_voters(10)
-    p3.add_voters(2)
+    p1.gain_voters(5)
+    p2.gain_voters(10)
+    p3.gain_voters(2)
     game.sort_order
     expect(game.return_players.first).to eq p2
   end

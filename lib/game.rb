@@ -6,6 +6,7 @@ class Game
     @voter_pool = 15 * player_array.count
     @game_over = false
     @current_turn = 0
+    @voter_pool_empty = false
   end
 
   def return_voter_pool
@@ -20,6 +21,16 @@ class Game
 
   def sort_order
     @players.sort_by! { |player| -player.voter_count }
+  end
+
+  def reduce_voter_pool(n)
+    n.times {
+      @voter_pool -= 1 if @voter_pool > 0
+    }
+  end
+
+  def increase_voter_pool(n)
+    @voter_pool += n
   end
 
   def switch_turns

@@ -52,7 +52,7 @@ class Player
     @advisors.each { |advisor| return advisor.effect }
   end
 
-  def add_voters(num)
+  def gain_voters(num)
     @voters += num
   end
 

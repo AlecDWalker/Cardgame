@@ -18,12 +18,12 @@ describe Player do
 
   describe 'voters' do
     it 'can gain voters' do
-      player.add_voters(3)
+      player.gain_voters(3)
       expect(player.voter_count).to eq 3
     end
 
     it 'can lose voters' do
-      player.add_voters(5)
+      player.gain_voters(5)
       player.lose_voters(4)
       expect(player.voter_count).to eq 1
     end
