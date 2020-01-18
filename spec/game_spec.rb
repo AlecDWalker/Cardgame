@@ -23,6 +23,10 @@ describe Game do
     expect(game.return_voter_pool).to eq 0
   end
 
+  it 'can return a remainder value once the pool is emptied' do
+    expect(game.reduce_voter_pool(50)).to eq 5
+  end
+
   it 'can reorder the player array based on voter count' do
     p1.gain_voters(5)
     p2.gain_voters(10)

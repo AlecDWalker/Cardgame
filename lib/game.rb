@@ -24,9 +24,15 @@ class Game
   end
 
   def reduce_voter_pool(n)
+    remainder = 0
     n.times {
-      @voter_pool -= 1 if @voter_pool > 0
+      if @voter_pool > 0
+        @voter_pool -= 1
+      else
+        remainder += 1
+      end
     }
+    return remainder if remainder.positive?
   end
 
   def increase_voter_pool(n)
