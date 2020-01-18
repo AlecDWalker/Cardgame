@@ -8,23 +8,23 @@ class Turn
     @player = player
     @player.draw_card(1) while @player.hand.count < 5
     @player.trigger_advisors
-    @actions = 0
+    @actions_left = 3
   end
 
   def return_actions
-    @actions
+    @actions_left
   end
 
-  def increase_actions
-    @actions += 1
+  def decrease_actions
+    @actions_left -= 1
   end
 
   def new_hand
-    if @actions == 0
+    if @actions_left == 3
       @player.hand.each { |card| @player.deck.add_card(card) }
       @player.hand.clear
       @player.draw_card(5)
-      @actions += 3
+      3.times{self.decrease_actions}
     else
       "You can't cycle your hand after playing a card!"
     end
