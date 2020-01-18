@@ -8,9 +8,13 @@ describe Turn do
   let(:card) { Card.new('Testname', 'Pledge', 1, 'This is where the card text goes') }
   let(:rumour) { Rumour.new('Rumour', 'Rumour', 0, 'This is a rumour card') }
 
-  it 'can decrease the action counter' do
-    turn.decrease_actions
+  it 'can decrease the action counter by playing a card' do
+    turn.play_card(rumour)
     expect(turn.return_actions).to eq 2
+  end
+
+  it 'disallows playing cards the player cannot afford' do
+    expect(turn.play_card(card)).to eq "You don't have enough influence to play this card!"
   end
 
   describe 'cycle hand' do
