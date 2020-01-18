@@ -3,9 +3,8 @@
 require 'card'
 
 describe Card do
-
-  let(:player) {Player.new('Alec')}
-  let(:card) {Card.new('Testname', 'Pledge', 1, 'This is where the card text goes')}
+  let(:player) { Player.new('Alec') }
+  let(:card) { Card.new('Testname', 'Pledge', 1, 'This is where the card text goes') }
 
   it 'can return its key details' do
     expect(card.return_title).to eq 'Testname'

@@ -1,8 +1,8 @@
+# frozen_string_literal: true
+
 class AllCards
   def initialize
-    @library = [
-
-    ]
+    @library = []
   end
 
   def random_sample(number_of_players)

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'player'
+require_relative 'cards/allcards'
 
 class Draft
   def initialize(cardpool, player_array)

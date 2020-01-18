@@ -25,7 +25,7 @@ class Turn
     else
       card.effect
       @player.lose_influence(card.return_cost)
-      self.decrease_actions
+      decrease_actions
     end
   end
 
@@ -34,7 +34,7 @@ class Turn
       @player.hand.each { |card| @player.deck.add_card(card) }
       @player.hand.clear
       @player.draw_card(5)
-      3.times{self.decrease_actions}
+      3.times { decrease_actions }
     else
       "You can't cycle your hand after playing a card!"
     end
