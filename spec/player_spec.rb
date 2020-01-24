@@ -53,18 +53,18 @@ describe Player do
   end
 
   describe 'deck interaction' do
-    it 'can add a card from the top of their deck to their hand' do
+    before do
       player.deck.add_card(card)
       player.deck.add_card(rumour)
       player.draw_card(1)
+    end
+
+    it 'can add a card from the top of their deck to their hand' do
       expect(player.return_hand).to eq [card]
       expect(player.deck_count).to eq [rumour]
     end
 
     it 'can put a card from their hand to the bottom of the deck' do
-      player.deck.add_card(card)
-      player.deck.add_card(rumour)
-      player.draw_card(1)
       player.play(card)
       expect(player.return_hand).to be_empty
       expect(player.deck_count).to eq [rumour, card]

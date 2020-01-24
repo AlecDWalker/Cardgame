@@ -17,28 +17,32 @@ describe Draft do
     expect(draft.return_selection).to eq [c1, c1, c1]
   end
 
-  it 'can have a player choose one of the cards' do
-    expect(draft.choose(1)).to eq [c1]
-    expect(draft.return_selection).to eq [c2, c1, c1]
+  describe 'Card selection' do
+    it 'can have a player choose one of the cards' do
+      expect(draft.choose(1)).to eq [c1]
+      expect(draft.return_selection).to eq [c2, c1, c1]
+    end
+
+    it 'adds the chosen card to that players deck' do
+      draft.choose(1)
+      expect(draft.current_player.deck_count).to eq [c1]
+    end
   end
 
-  it 'adds the chosen card to that players deck' do
-    draft.choose(1)
-    expect(draft.current_player.deck_count).to eq [c1]
-  end
+  describe 'multiplayer' do
+    it 'displays who is currently picking a card' do
+      expect(draft.current_player).to eq p1
+    end
 
-  it 'displays who is currently picking a card' do
-    expect(draft.current_player).to eq p1
-  end
+    it 'can cycle through the player array' do
+      draft.rotate
+      expect(draft.current_player).to eq p2
+    end
 
-  it 'can cycle through the player array' do
-    draft.rotate
-    expect(draft.current_player).to eq p2
-  end
-
-  it 'returns to the start of the player array once all have chosen' do
-    3.times { draft.rotate }
-    expect(draft.current_player).to eq p1
+    it 'returns to the start of the player array once all have chosen' do
+      3.times { draft.rotate }
+      expect(draft.current_player).to eq p1
+    end
   end
 
   it 'returns a message once the last card has been picked' do

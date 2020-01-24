@@ -13,14 +13,16 @@ describe Card do
     expect(card.return_text).to eq 'This is where the card text goes'
   end
 
-  it 'can target a sigle player' do
-    card.target(player)
-    expect(card.return_target).to eq player
-  end
+  describe 'Targeting' do
+    it 'can target a sigle player' do
+      card.target(player)
+      expect(card.return_target).to eq player
+    end
 
-  it 'erases the previous target after being played' do
-    card.target(player)
-    card.resolve(player)
-    expect(card.return_target).to eq nil
+    it 'erases the previous target after being played' do
+      card.target(player)
+      card.resolve(player)
+      expect(card.return_target).to eq nil
+    end
   end
 end
