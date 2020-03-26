@@ -2,7 +2,7 @@
 
 require './card.rb'
 
-class ILikeSteadyGrowth < Pledge
+class P01 < Pledge
   def initialize
     @title = 'I like steady growth'
     @card_type = 'Pledge'

@@ -28,6 +28,20 @@ describe Player do
       expect(player.voter_count).to eq 1
     end
 
+    it 'can lock voters' do
+      player.gain_voters(5)
+      player.lock_voters(3)
+      expect(player.voter_count).to eq 5
+      expect(player.unlocked_voter_count).to eq 2
+    end
+
+    it 'cannot lock non-existant voters' do
+      player.gain_voters(5)
+      player.lock_voters(7)
+      expect(player.voter_count).to eq 5
+      expect(player.unlocked_voter_count).to eq 0
+    end
+
     it 'cannot have a negative voter count' do
       player.lose_voters(6)
       expect(player.voter_count).to eq 0

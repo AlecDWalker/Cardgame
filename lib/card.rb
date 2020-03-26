@@ -45,7 +45,7 @@ class Card
 end
 
 class Rumour < Card
-  def resolve(_player)
+  def resolve(player)
     'Rumour quashed'
   end
 end

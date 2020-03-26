@@ -6,7 +6,6 @@ class Game
     @voter_pool = 15 * player_array.count
     @game_over = false
     @current_turn = 0
-    @voter_pool_empty = false
   end
 
   def return_voter_pool
@@ -26,7 +25,7 @@ class Game
   def reduce_voter_pool(n)
     remainder = 0
     n.times do
-      if @voter_pool > 0
+      if @voter_pool.positive?
         @voter_pool -= 1
       else
         remainder += 1

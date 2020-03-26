@@ -8,6 +8,7 @@ class Player
   def initialize(name)
     @name = name
     @voters = 0
+    @locked_voters = 0
     @influence = 0
     @deck = Deck.new
     @hand = []
@@ -19,6 +20,10 @@ class Player
   end
 
   def voter_count
+    @voters + @locked_voters
+  end
+
+  def unlocked_voter_count
     @voters
   end
 
@@ -59,6 +64,13 @@ class Player
   def lose_voters(num)
     @voters -= num
     @voters = 0 if @voters.negative?
+  end
+
+  def lock_voters(num)
+    num.times{
+    @locked_voters += 1 if @voters > 0
+    lose_voters(1)
+    }
   end
 
   def add_influence(num)
