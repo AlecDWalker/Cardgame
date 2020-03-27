@@ -6,6 +6,7 @@ require 'deck'
 
 describe Player do
   let(:player) { Player.new('Alec') }
+  let(:opponent) {Player.new('Dave')}
   let(:card) { Card.new('Testname', 'Pledge', 1, 'This is where the card text goes') }
   let(:rumour) { Rumour.new('Rumour', 'Rumour', 0, 'This is a rumour card') }
 
@@ -28,6 +29,13 @@ describe Player do
       expect(player.voter_count).to eq 1
     end
 
+    it 'can steal_voters'do
+      opponent.gain_voters(10)
+      player.steal_voters(opponent, 6)
+      expect(player.voter_count).to eq 6
+      expect(opponent.voter_count).to eq 4
+    end
+
     it 'can lock voters' do
       player.gain_voters(5)
       player.lock_voters(3)
@@ -40,6 +48,14 @@ describe Player do
       player.lock_voters(7)
       expect(player.voter_count).to eq 5
       expect(player.unlocked_voter_count).to eq 0
+    end
+
+    it 'cannot steal locked voters' do
+      opponent.gain_voters(5)
+      opponent.lock_voters(5)
+      player.steal_voters(opponent, 5)
+      expect(opponent.voter_count).to eq 5
+      expect(player.voter_count).to eq 0
     end
 
     it 'cannot have a negative voter count' do

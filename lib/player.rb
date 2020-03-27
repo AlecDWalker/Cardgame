@@ -7,7 +7,7 @@ class Player
   attr_accessor :deck, :hand, :advisors
   def initialize(name)
     @name = name
-    @voters = 0
+    @unlocked_voters = 0
     @locked_voters = 0
     @influence = 0
     @deck = Deck.new
@@ -20,11 +20,11 @@ class Player
   end
 
   def voter_count
-    @voters + @locked_voters
+    @unlocked_voters + @locked_voters
   end
 
   def unlocked_voter_count
-    @voters
+    @unlocked_voters
   end
 
   def influence_count
@@ -58,19 +58,26 @@ class Player
   end
 
   def gain_voters(num)
-    @voters += num
+    @unlocked_voters += num
   end
 
   def lose_voters(num)
-    @voters -= num
-    @voters = 0 if @voters.negative?
+    @unlocked_voters -= num
+    @unlocked_voters = 0 if @unlocked_voters.negative?
   end
 
   def lock_voters(num)
     num.times{
-    @locked_voters += 1 if @voters > 0
+    @locked_voters += 1 if @unlocked_voters > 0
     lose_voters(1)
     }
+  end
+
+  def steal_voters(target, num)
+    num.times{
+      self.gain_voters(1) if target.unlocked_voter_count.positive?
+      target.lose_voters(1)
+     }
   end
 
   def add_influence(num)
