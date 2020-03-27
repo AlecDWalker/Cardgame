@@ -4,7 +4,7 @@ require './card.rb'
 
 class P01 < Pledge
   def initialize
-    @title = 'I like steady growth'
+    @title = 'I Like Steady Growth'
     @card_type = 'Pledge'
     @cost = 1
     @text = 'Gain 3 VOTERS and 2 INFLUENCE'

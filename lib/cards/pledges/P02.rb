@@ -2,7 +2,7 @@
 
 require './card.rb'
 
-class P01 < Pledge
+class P02 < Pledge
   def initialize
     @title = 'Money is Power!'
     @card_type = 'Pledge'
