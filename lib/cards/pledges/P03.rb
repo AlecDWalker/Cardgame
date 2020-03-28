@@ -11,20 +11,20 @@ class P03 < Pledge
   end
 
   def choose_order(array)
-    #This method still needs to be created. Better in another class?
+    # This method still needs to be created. Better in another class?
   end
 
   def effect
     reorder_array = []
     current_player.hand.count = value
-    current_player.hand.except(self).each { |card|
+    current_player.hand.except(self).each do |card|
       reorder_array << card
-    }
+    end
     choose_order(reorder_array)
-    reorder_array.each { |card|
+    reorder_array.each do |card|
       current_player.deck.cards << card
-    }
+    end
     reorder_array.clear
-    current_player.gain_voters(value-1)
+    current_player.gain_voters(value - 1)
   end
 end

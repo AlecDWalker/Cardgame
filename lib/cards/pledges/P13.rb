@@ -10,18 +10,17 @@ class P13 < Pledge
     @text = 'Put your hand on the bottom of your deck in any order, then draw 5 cards'
   end
 
-  def choose_order(array)
-
-  end
+  def choose_order(array); end
 
   def effect
     reorder_array = []
-    current_player.hand.each { |card|
-      reorder_array << card}
+    current_player.hand.each do |card|
+      reorder_array << card
+    end
     choose_order(reorder_array)
-    reorder_array.each { |card|
+    reorder_array.each do |card|
       current_player.deck.cards << card
-    }
+    end
     reorder_array.clear
     current_player.draw_card(5)
   end

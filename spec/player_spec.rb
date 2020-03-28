@@ -6,7 +6,7 @@ require 'deck'
 
 describe Player do
   let(:player) { Player.new('Alec') }
-  let(:opponent) {Player.new('Dave')}
+  let(:opponent) { Player.new('Dave') }
   let(:card) { Card.new('Testname', 'Pledge', 1, 'This is where the card text goes') }
   let(:rumour) { Rumour.new('Rumour', 'Rumour', 0, 'This is a rumour card') }
 
@@ -29,7 +29,7 @@ describe Player do
       expect(player.voter_count).to eq 1
     end
 
-    it 'can steal_voters'do
+    it 'can steal_voters' do
       opponent.gain_voters(10)
       player.steal_voters(opponent, 6)
       expect(player.voter_count).to eq 6

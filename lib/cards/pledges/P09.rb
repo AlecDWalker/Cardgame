@@ -12,7 +12,7 @@ class P09 < Pledge
 
   def effect
     current_player.add_influence(1)
-    self.target(opponent1, opponent2)
+    target(opponent1, opponent2)
     current_player.steal_voters(opponent1, 1)
     current_player.steal_voters(opponent2, 1)
   end

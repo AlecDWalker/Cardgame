@@ -67,17 +67,17 @@ class Player
   end
 
   def lock_voters(num)
-    num.times{
-    @locked_voters += 1 if @unlocked_voters > 0
-    lose_voters(1)
-    }
+    num.times do
+      @locked_voters += 1 if @unlocked_voters > 0
+      lose_voters(1)
+    end
   end
 
   def steal_voters(target, num)
-    num.times{
-      self.gain_voters(1) if target.unlocked_voter_count.positive?
+    num.times do
+      gain_voters(1) if target.unlocked_voter_count.positive?
       target.lose_voters(1)
-     }
+    end
   end
 
   def add_influence(num)

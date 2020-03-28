@@ -11,7 +11,7 @@ class P07 < Pledge
   end
 
   def effect
-    self.target(opponent)
+    target(opponent)
     if current_player.influence_count < opponent.influence_count
       current_player.steal_voters(opponent, 3)
     end
