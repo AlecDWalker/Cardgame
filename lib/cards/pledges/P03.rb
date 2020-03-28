@@ -16,14 +16,15 @@ class P03 < Pledge
 
   def effect
     reorder_array = []
-    current_player.return_hand.count = value
-    currrent_player.hand.each do
-      reorder_array << self
-    end
-    reorder_array.choose_order
-    reorder_array.each do
-      self.resolve(current_player)
-    end
+    current_player.hand.count = value
+    current_player.hand.except(self).each { |card|
+      reorder_array << card
+    }
+    choose_order(reorder_array)
+    reorder_array.each { |card|
+      current_player.deck.cards << card
+    }
+    reorder_array.clear
     current_player.gain_voters(value-1)
   end
 end

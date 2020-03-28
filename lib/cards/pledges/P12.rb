@@ -6,7 +6,7 @@ class P12 < Pledge
   def initialize
     @title = "It's All Lies"
     @card_type = 'Pledge'
-    @cost = 1
+    @cost = 0
     @text = 'Remove all RUMOURS from your hand and gain 2 VOTERS for each RUMOUR removied this way'
   end
 
