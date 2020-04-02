@@ -10,5 +10,7 @@ class P10 < Pledge
     @text = 'Spin the Spinner!'
   end
 
-  def effect; end
+  def effect
+    current_player.spin
+  end
 end

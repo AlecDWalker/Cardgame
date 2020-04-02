@@ -88,4 +88,13 @@ class Player
     @influence -= num
     @influence = 0 if @influence.negative?
   end
+
+  def gain_rumour
+    @deck.cards.unshift(Rumour.new)
+  end
+
+  def spin
+
+  end
+  
 end
