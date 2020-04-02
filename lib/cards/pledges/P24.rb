@@ -11,10 +11,9 @@ class P24 < Pledge
   end
 
   def effect
-    while current_player.deck.cards[0].is_a? Rumour do
-      puts "Rumour quashed"
+    while current_player.deck.cards[0].is_a? Rumour
+      puts 'Rumour quashed'
       current_player.deck.cards.shift
     end
   end
-
 end

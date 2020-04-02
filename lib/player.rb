@@ -93,8 +93,5 @@ class Player
     @deck.cards.unshift(Rumour.new)
   end
 
-  def spin
-
-  end
-  
+  def spin; end
 end

@@ -11,7 +11,7 @@ class P19 < Pledge
   end
 
   def effect
-    count = ((current_player.influence_count)*3)
+    count = (current_player.influence_count * 3)
     current_player.lose_influence(current_player.influence_count)
     current_player.gain_voters(count)
   end

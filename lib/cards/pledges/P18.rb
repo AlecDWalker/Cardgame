@@ -11,7 +11,7 @@ class P18 < Pledge
   end
 
   def effect
-    while true do
+    loop do
       puts "Enter 'G' to gain 4 voters or 'L' to lock 2 voters"
       input = gets.chomp
       if input == 'G'
@@ -25,5 +25,4 @@ class P18 < Pledge
       end
     end
   end
-
 end

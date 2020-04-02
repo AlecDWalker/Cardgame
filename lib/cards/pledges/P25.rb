@@ -13,9 +13,6 @@ class P25 < Pledge
   def effect
     target(opponent)
     current_player.gain_voters(2)
-    @targets.each do |opponent|
-      opponent.gain_rumour
-    end
+    @targets.each(&:gain_rumour)
   end
-
 end

@@ -15,5 +15,4 @@ class P26 < Pledge
       current_player.spin
     end
   end
-
 end

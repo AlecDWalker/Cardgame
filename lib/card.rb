@@ -47,7 +47,7 @@ end
 class Rumour < Card
   def resolve(_player)
     'Rumour quashed'
-    self.delete
+    delete
   end
 end
 
