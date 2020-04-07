@@ -2,15 +2,15 @@ require 'sinatra/base'
 
 class Spin < Sinatra::Base
   enable :sessions
-  get '/' do
+  post '/' do
     erb :index
   end
 
-  get '/card' do
+  post '/card' do
     erb :card
   end
 
-  get '/field' do
+  post '/field' do
     erb :field
   end
 
