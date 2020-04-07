@@ -93,5 +93,16 @@ class Player
     @deck.cards.unshift(Rumour.new)
   end
 
-  def spin; end
+  def spin
+    number = rand(1..8)
+    lose_voters(1) if number == 1
+    lose_voters(2) if number == 2
+    draw_card(1) if number == 3
+    draw_card(2) if number == 4
+    add_influence(1) if number == 5
+    add_influence(2) if number == 6
+    gain_voters(1) if number == 7
+    gain_voters(2) if number == 8
+  end
+  
 end
