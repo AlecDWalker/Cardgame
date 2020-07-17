@@ -8,10 +8,14 @@ The game is split into two distinct phases: The Draft phase and the Campaign pha
 
 <img src="./diagrams/Game_order.svg">
 
+## Draft phase
 During the Draft phase, three randomly chosen cards are revealed, and each player takes turns selecting one card that they would like to add to their deck. Once a card is chosen, it is replaced by a new random card. The Draft phase is over once all of the cards are depleted, and each player has built their own personal deck using the cards that they have chosen.
 
 <img src="./diagrams/Draft_phase1.svg" alt="Draft phase step 1">     <img src="./diagrams/Draft_phase2.svg" alt="Draft phase step 2">
 
+In the example above, Amy Beth and Charlie have just srted playing. Amy goes first, looks at the cards on display (Card1, Card2 and Card3), and decides to choose Card2 to play with. Card2 becomes the first card in her deck, and a new card from the pile (Card4) is turned over to replace it. Then it is Beth's turn to choose either Card1, Card4 or Card3, followed by Charlie, and then back around to Amy. The draft repeats in this manner until all of the cards are gone, and each player should have built their own deck of 15 cards that they selected.
+
+## Campaign phase
 The Campaign phase is where the bulk of the gameplay takes place.
 
 <img src="./diagrams/Campaign_phase_layout.svg">
