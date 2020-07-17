@@ -12,10 +12,10 @@ During the Draft phase, three randomly chosen cards are revealed, and each playe
 
 <div class="row">
   <div class="column">
-    <img title="Draft phase step 1" img src="Draft_phase1.svg" style="width:100%">
+    <img title="Draft phase step 1" img src="Draft_phase1.svg" alt="Draft phase step 1" style="width:100%">
   </div>
   <div class="column">
-    <img title="Draft phase step 2" img src="Draft_phase2.svg" style="width:100%">
+    <img title="Draft phase step 2" img src="Draft_phase2.svg" alt="Draft phase step 2" style="width:100%">
   </div>
 </div>
 
