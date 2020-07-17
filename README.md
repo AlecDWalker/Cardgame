@@ -1,4 +1,4 @@
-##Cardgame##
+## Cardgame
 This project is an exercise in building our the back end of a politically-themed card game called 'Spin'.
 
 'Spin' is a game for 2-6 players, each representing a political candidate in the run up to a general election. The aim of the game is to be the player with the highest total number of voters at the end of the final round. To help accomplish this goal, players can play various types of cards to attract voters, gain influence, and disrupt their opponents' plans.
