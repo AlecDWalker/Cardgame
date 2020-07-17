@@ -1,5 +1,7 @@
 # Card types
 
+<img src="./diagrams/Card_layout.svg">
+
 ## Pledge
 Pledges are cards that generally confer a positive benefit to the person who plays them (e.g. gain 3 voters). Some pledges require another target player to be specified when played. After a pledge is played and its effect resolves, it is returned to the bottom of its owner's deck unless the card states otherwise.
 
@@ -7,7 +9,7 @@ Pledges are cards that generally confer a positive benefit to the person who pla
 Smears are cards that generally confer a negative effect to an opponent (e.g. lose all influence). Most smears require another target player to be specified when played. After a smear is played and its effect resolves, it is returned to the bottom of the player's deck unless the card states otherwise.
 
 ## Advisor
-Advisor cards have effects similar to pledges and smears, but instead of only triggering once, they stay on the field and continue to trigger their effect at the start of each subsequent turn. After an advisor is played an its effect triggers it is placed in the Advisors zone in front of the player who owns it(unless otherwise stated on the card). There is no limit on the number of advisors a player can have. At the start of a players turn, before they draw, the effects of all of the advisors in their advisor zone trigger once. If a player owns multiple advisors they can chose the order in which their effects activate. An advisor remains in play indefinitely unless it is removed by another card effect, at which point it goes to the bottom of its owner's deck.
+Advisor cards have effects similar to pledges and smears, but instead of only triggering once, they stay on the field and continue to trigger their effect at the start of each subsequent turn. After an advisor is played an its effect triggers it is placed in the Advisors zone in front of the player who owns it(unless otherwise stated on the card). There is no limit on the number of advisors a player can have. At the start of a players turn the effects of all of the advisors in their advisor zone trigger once. If a player owns multiple advisors they can chose the order in which their effects activate. An advisor remains in play indefinitely unless it is removed by another card effect, at which point it goes to the bottom of its owner's deck.
 
 ## Rumour
 Rumour cards do not belong to the main card library and as such are not present in the draft phase. They are instead created by the effects of other cards during the campaign phase. Rumours have no effect when played, and exist mainly to take up space in a player's hand and make them spend time/resources to get rid of them (although some cards are designed to interact with rumours in more interesting ways). There is no limit to the number of rumours that may be active in a game at any given time. Once a rumour is played it is destroyed and removed from its owner's deck.
