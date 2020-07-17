@@ -13,7 +13,7 @@ During the Draft phase, three randomly chosen cards are revealed, and each playe
 
 <img src="./diagrams/Draft_phase1.svg" alt="Draft phase step 1">     <img src="./diagrams/Draft_phase2.svg" alt="Draft phase step 2">
 
-In the example above, Amy Beth and Charlie have just srted playing. Amy goes first, looks at the cards on display (Card1, Card2 and Card3), and decides to choose Card2 to play with. Card2 becomes the first card in her deck, and a new card from the pile (Card4) is turned over to replace it. Then it is Beth's turn to choose either Card1, Card4 or Card3, followed by Charlie, and then back around to Amy. The draft repeats in this manner until all of the cards are gone, and each player should have built their own deck of 15 cards that they selected.
+In the example above, Amy Beth and Charlie have just started playing. Amy goes first, looks at the cards on display (Card1, Card2 and Card3), and decides to choose Card2 to play with. Card2 becomes the first card in her deck, and a new card from the pile (Card4) is turned over to replace it. Then it is Beth's turn to choose either Card1, Card4 or Card3, followed by Charlie, and then back around to Amy. The draft repeats in this manner until all of the cards are gone, and each player should have built their own deck of 15 cards that they selected.
 
 ## Campaign phase
 The Campaign phase is where the bulk of the gameplay takes place.
