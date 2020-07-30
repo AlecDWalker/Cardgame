@@ -9,6 +9,10 @@ describe Rumour do
   let(:card) { Card.new('Testname', 'Pledge', 1, 'This is where the card text goes') }
   let(:rumour) { Rumour.new('Rumour', 'rumour', 0, 'This is a rumour card') }
 
+  it 'announces its own destruction when played' do
+    expect(rumour.effect).to eq 'Rumour quashed'
+  end
+  
   it 'can play a rumour from their hand and delete it' do
     player.deck.add_card(rumour)
     player.deck.add_card(card)

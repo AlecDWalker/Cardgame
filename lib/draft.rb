@@ -24,7 +24,7 @@ class Draft
     if @selection.any?
       @selection
     else
-      Game.new(@player_array)
+      Campaign.new(@player_array)
       'All cards drafted, let the game begin!'
     end
   end

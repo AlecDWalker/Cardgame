@@ -45,9 +45,12 @@ class Card
 end
 
 class Rumour < Card
-  def resolve(_player)
+  def effect
     'Rumour quashed'
-    delete
+  end
+
+  def resolve(player)
+    player.hand.delete(self)
   end
 end
 
