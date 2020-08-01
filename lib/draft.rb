@@ -9,6 +9,7 @@ class Draft
     @player_array = player_array
     @selection = []
     @chooser = 0
+    @draft_complete = false
     3.times { deal(0) }
   end
 
@@ -24,7 +25,7 @@ class Draft
     if @selection.any?
       @selection
     else
-      Campaign.new(@player_array)
+      @draft_complete = true
       'All cards drafted, let the game begin!'
     end
   end

@@ -20,4 +20,11 @@ describe Game do
     expect(draft.return_players[0].return_name).to eq 'Alec'
     expect(draft.return_players[1].return_name).to eq 'Dave'
   end
+
+  it 'can create a new campaign with the player array' do
+    campaign = game.create_campaign
+    expect(campaign).instance_of? Campaign
+    expect(campaign.return_players[0].return_name).to eq 'Alec'
+    expect(campaign.return_players[1].return_name).to eq 'Dave'
+  end
 end

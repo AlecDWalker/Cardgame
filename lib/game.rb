@@ -21,4 +21,8 @@ class Game
   def create_draft
     Draft.new(@cardpool, @player_array)
   end
+
+  def create_campaign
+    Campaign.new(@player_array)
+  end
 end
