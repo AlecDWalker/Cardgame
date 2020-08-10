@@ -23,8 +23,7 @@ class Turn
     if card.return_cost > @player.influence_count
       "You don't have enough influence to play this card!"
     else
-      card.effect
-      @player.lose_influence(card.return_cost)
+      @player.play(card)
       decrease_actions
     end
   end

@@ -48,6 +48,7 @@ class Player
   end
 
   def play(card)
+    self.lose_influence(card.return_cost)
     card.effect
     card.resolve(self)
     @hand.delete(card)
@@ -104,5 +105,5 @@ class Player
     gain_voters(1) if number == 7
     gain_voters(2) if number == 8
   end
-  
+
 end
